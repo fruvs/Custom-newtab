@@ -117,11 +117,26 @@ document.getElementById('settings').addEventListener('click', function() {
 
 // Save settings
 document.getElementById('setBg').addEventListener('click', function() {
-  let bgUrl = document.getElementById('bgUrl').value;
-  chrome.storage.sync.set({'bgUrl': bgUrl}, function() {
-    displayMessage('Background updated!', 2000);
-  });
+  let url = document.getElementById('bgUrl').value;
+  if (url) {
+    chrome.storage.sync.set({ 'bgUrl': url }, function() {
+      displayMessage('Background updated! Please reload the page for the background to take effect.', 0);
+    });
+  }
 });
+
+function displayMessage(message, duration) {
+  var messageContainer = document.getElementById('messageContainer');
+  messageContainer.innerText = message;
+  messageContainer.style.display = 'block';
+
+  if (duration > 0) {
+    setTimeout(function() {
+      messageContainer.style.display = 'none';
+    }, duration);
+  }
+}
+
 
 document.getElementById('setFont').addEventListener('click', function() {
   let fontFamily = document.getElementById('fontFamily').value;
