@@ -1,8 +1,15 @@
 body {
   background: #333;
-  background-image: url(default.jpg);
+  background-image: url(https://media.discordapp.net/attachments/890690286475427871/1105505752166182932/image.png?width=778&height=438);
   background-size: cover;
 }
+
+
+/*body {
+  background: #333;
+  background-image: url(default.jpg);
+  background-size: cover;
+}*/
 
 #clock {
   font-family: 'Arial', sans-serif;
