@@ -1,0 +1,164 @@
+body {
+  background: #333;
+  background-image: url(default.jpg);
+  background-size: cover;
+}
+
+#clock {
+  font-family: 'Arial', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#settings {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+#settingsContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(5px); 
+  padding: 20px;
+  display: none;
+  width: 600px;
+  height: 400px;
+  overflow: auto;
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+
+#clockContent div {
+  display: flex;
+  align-items: center; /* Vertically align the checkbox and the label */
+}
+
+/* Add some margin to the right of the checkbox */
+#clockContent input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+#tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tabs button {
+  flex: 1;
+  margin: 5px;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+button {
+  width: 100%;
+  padding: 5px;
+}
+
+#tab1Content, #tab2Content {
+  display: none;
+}
+
+/* other styles */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px; /* reduced size */
+  height: 17px;
+  margin-left: 15px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca3e47; /* red when off */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px; /* reduced size */
+  width: 12px; /* reduced size */
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #33cc33; /* green when on */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Larger labels and align switch-container */
+.label-large {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.switch-container {
+  text-align: center;
+  padding: 10px;
+}
+
+#messageContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 9999;
+}
+
